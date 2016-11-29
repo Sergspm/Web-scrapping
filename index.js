@@ -7,9 +7,9 @@ const page = base_url + '/wiki/Main_Page';
 
 app
   .parse(base_url, page)
-  .then((links) => {
+  /*.then((links) => {
     console.log(links);
   })
   .catch((err) => {
     console.error(err)
-  });
+  })*/;
