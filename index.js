@@ -1,11 +1,15 @@
 'use strict';
-const spawn = require('child_process').spawn;
+
 const app = require('./app');
 
+const base_url = 'https://en.wikipedia.org';
+const page = base_url + '/wiki/Main_Page';
+
 app
-  .start()
-  .then(() => {
-    spawn("open", ["http://localhost:" + app.port + "/"]);
-    console.log(`Application started on: ${app.port}`);
+  .parse(base_url, page)
+  .then((links) => {
+    console.log(links);
   })
-  .catch((err) => console.error(err));
+  .catch((err) => {
+    console.error(err)
+  });
